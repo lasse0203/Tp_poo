@@ -28,5 +28,9 @@ public class Chaise {
                     " de couleur " + couleur +
                     "à un prix " + prix ;
         }
+
+        public void afficher(){
+            System.out.println(this.toString());
+        }
     }
 
