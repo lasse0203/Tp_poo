@@ -7,7 +7,7 @@ public class Arbre extends Plante {
 
     public Arbre(String nom, double hauteur, String couleur,double tronc) {
         super(nom, hauteur, couleur);
-            this.tronc=20;
+            this.tronc=tronc;
     }
 
     public double getTronc() {
@@ -17,7 +17,7 @@ public class Arbre extends Plante {
     @Override
     public void afficher(){
         super.afficher();
-        System.out.print("l'arbre est d'un tronc de "+tronc + "m.");
+        System.out.print("l'arbre est d'un tronc de "+tronc + "m");
 
     }
 
