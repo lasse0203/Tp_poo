@@ -48,11 +48,13 @@ public class Livre {
             this.estEmprunte = estEmprunte;
         }
 
-    public void afficherInformations() {
-        System.out.println("Titre: " + titre);
-        System.out.println("Auteur: " + auteur);
-        System.out.println("Nombre de pages: " + nombrePage);
-        System.out.println("Emprunté: " + (estEmprunte ? "Oui" : "Non"));
+    public String afficherInformations() {
+        return "Livre{" +
+                "titre='" + titre + '\'' +
+                ", auteur='" + auteur + '\'' +
+                ", nombrePage=" + nombrePage +
+                ", estEmprunte=" + estEmprunte +
+                '}';
     }
 
 
