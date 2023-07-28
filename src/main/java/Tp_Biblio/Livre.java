@@ -9,11 +9,10 @@ public class Livre {
 
         private boolean estEmprunte;
 
-    public Livre(String titre, String auteur, int nombrePage, boolean estEmprunte){
+    public Livre(String titre, String auteur, int nombrePage){
             this.titre = titre;
             this.auteur = auteur;
             this.nombrePage = nombrePage;
-            this.estEmprunte = false;
         }
 
         public String getNom () {
@@ -48,13 +47,13 @@ public class Livre {
             this.estEmprunte = estEmprunte;
         }
 
+
     public void afficherInformations() {
-        System.out.println("Titre: " + titre);
-        System.out.println("Auteur: " + auteur);
-        System.out.println("Nombre de pages: " + nombrePage);
-        System.out.println("Emprunté: " + (estEmprunte ? "Oui" : "Non"));
+        System.out.println( "Livre{" +
+                "titre='" + titre + '\'' +
+                ", auteur='" + auteur + '\'' +
+                ", nombrePage=" + nombrePage +
+                ", estEmprunte=" + estEmprunte +
+                '}');
     }
-
-
-
-    }
+}

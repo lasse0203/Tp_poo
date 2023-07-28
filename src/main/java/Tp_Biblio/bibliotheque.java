@@ -3,25 +3,29 @@ package Tp_Biblio;
 import java.util.ArrayList;
 
 class Bibliotheque {
-    private ArrayList<Livre> Livre;
+    private ArrayList<Livre> livres;
 
     public Bibliotheque() {
-        Livre = new ArrayList<>();
+        livres = new ArrayList<>();
     }
 
     public void ajouterLivre(Livre livre) {
-        Livre.add(livre);
+        livres.add(livre);
     }
 
     public void supprimerLivre(Livre livre) {
-        Livre.remove(livre);
+        livres.remove(livre);
     }
 
     public void afficherListeLivres() {
-        for (Livre livre : Livre) {
+        for (Livre livre : livres) {
             livre.afficherInformations();
             System.out.println();
         }
+    }
+
+    public ArrayList<Livre> getLivres() {
+        return livres;
     }
 
     public void emprunterLivre(Livre livre) {
