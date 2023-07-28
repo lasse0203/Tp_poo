@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Bibliotheque bibliotheque = new Bibliotheque();
 
-<<<<<<< HEAD
+
         bibliotheque.ajouterLivre(new Livre("hello world", "me", 145));
         bibliotheque.ajouterLivre(new Livre("Me again", "me", 110));
         bibliotheque.ajouterLivre(new Livre("Black", "me", 11));
