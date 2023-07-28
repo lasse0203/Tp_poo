@@ -48,6 +48,7 @@ public class Livre {
         }
 
 
+
     public void afficherInformations() {
         System.out.println( "Livre{" +
                 "titre='" + titre + '\'' +
