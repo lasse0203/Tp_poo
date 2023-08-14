@@ -1,6 +1,7 @@
 package TP_Hotel;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class AppHotel {
@@ -50,8 +51,15 @@ public class AppHotel {
                     System.out.println("=== Client reservation === ");
                     // Client reservation
                     System.out.println("witch client would you like to check his reservation? :");
+                    hotel.listClient();
                     int clientId = scanner.nextInt();
-                    hotel.getReservationInfo(hotel.getReservationsByClientId(clientId));
+                    List<Reservation> reservationClient = hotel.getReservationsByClientId(clientId);
+                    if (reservationClient.isEmpty()){
+                        System.out.println("client: " + clientId + " doesn't have a reservation ");
+                    }else {
+
+                        hotel.getReservationInfo(reservationClient);
+                    }
 
                     break;
 
@@ -74,6 +82,9 @@ public class AppHotel {
                         System.out.println("Which room would you like to book: ");
                         roomId = scanner.nextInt();
                         room = hotel.findRoomById(roomId);
+                        if(room == null){
+                            System.out.println("this room does not exist!");
+                        }
                         room.setBooked(true);
                         roomsReservation.add(room);
                         System.out.println("Would you like to book another room: Y/N ?");
