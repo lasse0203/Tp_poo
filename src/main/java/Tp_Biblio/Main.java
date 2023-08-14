@@ -16,7 +16,7 @@ public class Main {
 
         bibliotheque.afficherListeLivres();
 
-        // Methode du supression  1 :
+        // Methode de supression  1 :
 
         Livre livre5=new Livre("titre5", "me", 11);
        bibliotheque.ajouterLivre(livre5);
@@ -25,7 +25,7 @@ public class Main {
 
         bibliotheque.afficherListeLivres();
 
-        // methode du supression  2
+        // methode de supression  2
 
         ArrayList<Livre> livres = bibliotheque.getLivres();
 
