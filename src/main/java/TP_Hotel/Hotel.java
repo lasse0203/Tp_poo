@@ -87,11 +87,19 @@ public class Hotel {
     public void getReservationInfo(List<Reservation> reservations) {
         for (Reservation reservation:reservations) {
             System.out.println(" Reservation " +
-                    " reservationNumber " + reservation.getReservationNumber() +
-                    ", statutReservation est " + reservation.isStatutReservation() +
+                    " reservation Number " + reservation.getReservationNumber() +
+                    ", statut Reservation is " + reservation.isStatutReservation() +
                     ", rooms" + reservation.getRoomReservationInfo(reservation.getRooms()) +
                     ", client" + reservation.getClient().getClientInfo()) ;
         }
+    }
+    public Client findClientById(int clientId){
+        for (Client c:clients) {
+            if(c.getIdClient() == clientId){
+                return c;
+            }
+        }
+        return null;
     }
 }
 

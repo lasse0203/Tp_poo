@@ -19,6 +19,7 @@ public class AppHotel {
         rooms.add(new Room(6,1,50.));
         hotel.setRooms(rooms);
 
+
         // Menu
         System.out.println("=== Main menu ===");
 
@@ -67,12 +68,29 @@ public class AppHotel {
                 case 4 :{
                     System.out.println("=== Add reservation ===");
                     // add reservation
-                    System.out.println("Please enter client information");
-                    Client client = addClientInfo(scanner, hotel);
+                    if(hotel.getClients().isEmpty()){
+                        System.out.println("Client list is empty please add a new client!");
+                        addClientInfo(scanner,hotel);
+                    }
+                    System.out.println("for which client do you want to create a reservation?");
+                    hotel.listClient();
+                    int clientId = scanner.nextInt();
+                    Client client = hotel.findClientById(clientId);
+                    while (client == null){
+                        System.out.println("No client founded, please choose another client!");
+                        clientId = scanner.nextInt();
+                        client = hotel.findClientById(clientId);
+                    }
+
                     System.out.println("Which room would you like to book: ");
                     hotel.listRoom();
                     int roomId = scanner.nextInt();
                     Room room = hotel.findRoomById(roomId);
+                    while(room==null || room.isBooked()){
+                        System.out.println("No room founded or this room is already booked please choose another one!");
+                        roomId= scanner.nextInt();
+                        room = hotel.findRoomById(roomId);
+                    }
                     room.setBooked(true);
                     ArrayList roomsReservation = new ArrayList();
                     roomsReservation.add(room);
@@ -113,6 +131,8 @@ public class AppHotel {
                     hotel.listReservation();
                     break;
                 }
+                default:
+                    System.out.println("Invalide Value");
             }
 
         }
